@@ -43,6 +43,7 @@
             </div>
         </div>
     </div>
+    <Toast />
 </template>
 <script setup lang="ts">
     import { storeToRefs } from 'pinia';
@@ -50,6 +51,7 @@
     import Editor from 'primevue/editor';
     const config = useRuntimeConfig();
     const route = useRoute();
+    const toast = useToast();
 
     const userCookie = useCookie('user');
     
@@ -81,6 +83,13 @@
         };
         
         await updateProfile(profileToUpdate);
+
+        toast.add({ 
+            severity: 'success',
+            summary: 'Success Message',
+            detail: 'Usuario editado correctamente',
+            life: 3000 
+        });
 
     }
 

@@ -5,13 +5,16 @@
             <form class="flex">
                 <div class="w-3/6 px-2">
                     <div class="w-full mb-8">
+                        <p>Nombre:</p>
                         <InputText v-model="name" placeholder="Nombre" class="w-full mb-4" />
                     </div>
                     <div class="w-full mb-8">
+                        <p>Edad:</p>
                         <InputText v-model.number="age" class="w-full mb-4" />
                         <Slider v-model="age" :max="20" class="w-full" />
                     </div>
                     <div class="w-full mb-8">
+                        <p>Raza:</p>
                         <Dropdown v-model="selectedBreed" :options="breeds" filter optionLabel="name" placeholder="Seleciona la raza de tu mascota" @change="setBreed" class="w-full mb-8">
                             <template #value="slotProps">
                                 <div v-if="slotProps.value" class="flex align-items-center">
@@ -27,12 +30,14 @@
                                 </div>
                             </template>
                         </Dropdown>
-                        <Listbox v-model="selectedSize" :options="sizes" optionLabel="name" class="w-full" />
+                        <p>Tamaño: </p>
+                        <Listbox v-model="selectedSize" :options="sizes" optionLabel="name" :pt="{root: { class: 'w-full dark:bg-indigo-950  rounded-sm shadow-md border-2 border-indigo-700/50' }}" />
                     </div>
                 </div>
                 <div class="w-3/6 px-2">
                     <div class="w-full mb-12">
-                        <Dropdown v-model="selectedCity" :options="cities" filter optionLabel="city" placeholder="Selecciona la ciudad donde te encuentras ubicado" class="w-full">
+                        <p>Ubicación de la mascota</p>
+                        <Dropdown v-model="selectedCity" :options="cities" filter optionLabel="city" placeholder="Selecciona la ciudad donde te encuentras ubicado" :pt="{root: { class: 'dark:bg-indigo-950 rounded-sm shadow-md border-2 border-indigo-700/50' }}" >
                             <template #value="slotProps">
                                 <div v-if="slotProps.value" class="flex align-items-center">
                                     <div>{{ slotProps.value.state }} - {{ slotProps.value.city }}</div>
@@ -49,7 +54,8 @@
                         </Dropdown>
                     </div>
                     <div class="w-full">
-                        <Editor v-model="bio" image="false" editorStyle="height: 320px" :pt="{root: { class: 'w-full bg-white'}, image:{ class: 'invisible'}}" />
+                        <p>Bio</p>
+                        <Editor v-model="bio" image="false" editorStyle="height: 320px" :pt="{root: { class: 'w-full bg-transparent dark:bg-indigo-950  rounded-sm shadow-md border-2 border-indigo-700/50'}, image:{ class: 'invisible'}}" />
                     </div>
                 </div>
             </form>

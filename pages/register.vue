@@ -64,7 +64,7 @@
         toast.add({ 
             severity: 'success',
             summary: 'Success Message',
-            detail: registered.value?.message,
+            detail: 'Usuario Registrado Correctamente',
             life: 3000 
         });
     }

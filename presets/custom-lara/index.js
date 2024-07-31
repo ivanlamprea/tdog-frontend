@@ -34,6 +34,7 @@ import accordion from './accordion';
 import card from './card';
 import deferred from './deferred';
 import divider from './divider';
+import dialog from './dialog';
 import fieldset from './fieldset';
 import panel from './panel';
 import scrollpanel from './scrollpanel';
@@ -123,6 +124,7 @@ export default {
     card,
     deferred,
     divider,
+    dialog,
     fieldset,
     panel,
     scrollpanel,

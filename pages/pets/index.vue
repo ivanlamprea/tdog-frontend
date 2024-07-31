@@ -1,10 +1,10 @@
 
 <template>
     <div class="container max-w-screen-xl w-[90%] dark:bg-indigo-950  rounded-sm shadow-md border-2 border-indigo-700/50 mx-auto mt-12 py-8 px-12">    
-        <h1 class="text-center text-4xl text-indigo-700 dark:text-lime-400 font-bold mb-5">Mis Perritos</h1>
-        <NuxtLink to="/pets/new">Registrar Macotas</NuxtLink>
+        <h1 class="text-center text-4xl text-indigo-700 dark:text-lime-400 font-bold">Mis Perritos</h1>
+        <NuxtLink to="/pets/new" class="font-bold underline underline-offset-4 mb-8">+ Registrar Macotas</NuxtLink>
         <hr/>
-        <div class="grid gap-4 grid-cols-4">
+        <div class="grid gap-4 grid-cols-4 mt-8">
             <Card v-for="dog in list_dog" >
                 <template #header>
                     <img alt="user header" class="w-full h-48 object-cover" :src="dog.pictures.length > 0 ? `${config.public.API_URL}api/dog/photo/${dog.pictures[0].image}` : '/img/dog-default.jpg'" />
@@ -48,17 +48,17 @@
 
     const onConfirmDelete = (_id) => {
         confirm.require({
-            message: 'Do you want to delete this record?',
-            header: 'Danger Zone',
+            message: 'Estas seguro de eliminar esta mascota?',
+            header: 'Eliminar Mascota',
             icon: 'pi pi-info-circle',
             rejectLabel: 'Cancel',
             rejectProps: {
-                label: 'Cancel',
+                label: 'Cancelar',
                 severity: 'secondary',
                 outlined: true
             },
             acceptProps: {
-                label: 'Delete',
+                label: 'Eliminar',
                 severity: 'danger'
             },
             accept: async () => {
@@ -72,7 +72,7 @@
                 });
             },
             reject: () => {
-                toast.add({ severity: 'error', summary: 'Rejected', detail: 'You have rejected', life: 3000 });
+                toast.add({ severity: 'error', summary: 'Rechazado', detail: 'Haz rechazado esta acción', life: 3000 });
             }
         });
     };

@@ -1,0 +1,243 @@
+.applyment-assessment {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+
+    input[type="radio"], input[type="checkbox"] { 
+        width: 26px;
+        height: 26px;
+        flex-shrink: 0;
+    }
+
+
+
+    .panel{
+        border: 1px solid #4332bd;
+        background-color: #f4f4f5;
+        border-radius: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+        padding: 2rem 0rem;
+        display: none;
+        &.active{ display: block; }
+        .body-panel{
+            .question {
+                display: block;
+                .title-question { font-size: 1rem; font-weight: 600; }
+                .container-question {
+                    display: block;
+                    .field-item{
+                        display: flex;
+                        margin: 0.5rem 0;
+                        label{
+                            margin-left: 1rem;
+                        }
+                    }
+                    p.selected{ color: green; display: none; }
+                    p.instruction{ color: blue; }
+                }
+            }
+        }
+    }
+
+
+
+    .panel-tabular {
+        .body-panel{
+            .question{ 
+                display: flex;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.192);
+                .title-question { width: 40%; }
+                .container-question{
+                    width: 60%;
+                    display: flex;
+                    align-items: center;
+                    .field-item {
+                        position: relative;
+                        width: calc(100% / 6);
+                        display: flex;
+                        justify-content: center;
+                        label{ 
+                            display: none;
+                        }
+                    }
+                    p.selected{ display: none; }
+                    p.instruction{ display: none; }
+                }
+
+                &:nth-of-type(1) {
+                    .container-question {
+                        .field-item {
+                            label{
+                                display: block;
+                                position: absolute;
+                                text-align: center;
+                                text-transform: uppercase;
+                                font-size: 0.7rem;
+                                top: -86px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+.title-question {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.container-question {
+    background-color: #ffffff99;
+    border-bottom: 1px solid #cecece;
+    box-shadow: 0px 0px 5px 2px #cecece;
+    box-sizing: border-box;
+    margin: 0.5rem 0 2rem 0;
+    padding: 2rem 0.5rem;
+}
+
+input, textarea, select{
+    background-color: #c6d1db63;
+    box-sizing:border-box;
+    border: 1px solid #a3a3a3;
+    border-radius: 7px;
+    color: #2d282f;
+    font-size: 1.2rem;
+    max-width: 360px;
+    width: 100%;
+    padding: 3px;
+}
+
+input[disabled], textarea[disabled], select[disabled]{ 
+    opacity: 0.2;
+    filter: brightness(0.1);
+}
+
+.selected {
+    color: green;
+}
+
+/**********************************************************************
+input[type="date"] { 
+    width: 140px;
+    margin-right: 10px;
+}
+
+/*********************************************************************
+/* Inputs Radio and Checkbox *
+
+.field-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+input[type="checkbox"] + label, input[type="radio"] + label{ 
+    font-weight: 300;
+}
+
+.other-field {
+    margin-left: 5px;
+}
+
+/*********************************************************************
+/* Inputs Range */
+.field-group-range {
+    display: flex;
+    align-items: center;
+    input[type="range"] + input {
+        border: none;
+        margin-left: 10px;
+        text-align: center;
+        width: 54px;
+    }
+}
+
+/*********************************************************************
+/* File *
+.container-file {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    a{
+        color: #6161c1;
+    }
+
+    .btn-delete-file {
+        align-items: center;
+        background-color: #e54c4c;
+        border-radius: 4px;
+        color: #cecece;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        height: 30px;
+        margin-left: 10px;
+        transition: 0.2s all;
+        width: 40px;
+        &:hover {
+            background-color: #cb0c0c;
+            color: #fff;
+        }
+    }
+}
+
+/*********************************************************************
+/* MultipleInput *
+
+.container-field-group{
+    .field-group{
+        position: relative;
+        margin: 4px 0 !important;
+        padding-bottom: 20px;
+        .btn-delete{
+            position: absolute;
+            right: 10px;
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 0;
+            background-color: #cb5a5a;
+            svg{ transform: scale(1.3) }
+        }
+    }
+}
+
+.container-field-group + .btn-add{
+    background-color: #4dab4d;
+    width: 60px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg{ transform: scale(1.3) }
+}
+
+/*********************************************************************
+/* Textarea*
+textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+*/
+
+
+

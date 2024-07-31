@@ -1,0 +1,32 @@
+:root {
+    --modal-bg: rgba(0,0,0,0.75);
+    --modal-color:#fcd219;
+    --modal-button-bg:#fcd219;
+    --modal-button-color: #32276d;
+    --bg-image-intro: url('/img/bg-light-intro-hm.png');
+    --color-bg: #e6e6e6;
+    --color-text-primary: #32276d;
+    --color-text-secondary: #e8e8e8;
+    --color-text-terciary: #7e79ae;
+    --color-bar: #32276d;
+    --color-window: #ffffff;
+    --color-input-bg: #e6e6e6;
+    
+    --font-size-h1: 2rem;
+}
+
+:root.dark {
+    --modal-bg: rgba(255,255,255,0.75);
+    --modal-color: #32276d;
+    --modal-button-bg:#32276d;
+    --modal-button-color: #fcd219;
+    --bg-image-intro: url('/img/bg-dark-intro-hm.png');
+    --color-bg: #14113e;
+    --color-text-primary: #ddff00;
+    --color-text-secondary: #e8e8e8;
+    --color-text-terciary: #7c77ad;
+    --color-bar: #d9e021;
+    --color-window: #1f174f;
+    --color-input-bg: #32276d;
+    --font-size-h1: 2rem;
+}
